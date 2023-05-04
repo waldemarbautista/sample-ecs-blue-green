@@ -270,6 +270,7 @@ locals {
     LOG_GROUP          = module.ecs.services["web"].container_definitions["web"].cloudwatch_log_group_name
     LOG_REGION         = local.region
     LOG_STREAM_PREFIX  = "ecs"
+    DATABASE_URI       = "mysql://${module.rds.db_instance_username}:${module.rds.db_instance_password}@${module.rds.db_instance_endpoint}/information_schema"
   }
 }
 
